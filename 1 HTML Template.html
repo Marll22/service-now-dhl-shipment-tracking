@@ -1,0 +1,69 @@
+<div>
+  <label>
+    <input class="form-control" type="text" placeholder="Please enter your DHL tracking code"
+      ng-model="c.data.tracking_code">
+  </label>
+  <button class="btn btn-primary" ng-click="c.submitCode()">Submit</button>
+    <div id="tracking-heading" ng-if="c.data.shipments.length > 0">
+        <h3>
+      You have the following shipments
+    </h3>
+      <button id="refresh" class="btn btn-success" ng-click="c.refreshStatus()" ng-model="c.data.refresh">
+        Refresh
+      </button>
+    </div>
+
+    <h3 ng-if="!c.data.shipments.length || c.data.shipments.length == 0">
+      Please enter a tracking code to start tracking a new shipment
+    </h3>
+    <div class="card">
+    <ul class="list-group" ng-repeat="shipment in c.data.shipments">
+      <div ng-click="c.toggleTrackingEvents(shipment)" class="list-group-item fade-in" id="{{shipment.sys_id}}">
+       <div class="row">
+        <div class="col-lg-6">
+        
+        <p>
+          <b>Tracking code:</b> {{shipment.u_id}}
+        </p>
+          <p>
+            <b>Product: </b> {{shipment.u_product}}
+          </p>
+           <p>
+            <b>Weight: </b> {{shipment.u_weight}}
+          </p>
+        </div>
+        <div class="col-lg-6">
+         <p><b> Status: </b> {{ shipment.u_status_code }} <span ng-switch="shipment.u_status_code">
+           <i ng-switch-when="delivered" class="icon icon-check-circle"></i>
+           <i ng-switch-when="transit" class="icon icon-arrow-right"></i>
+           <i ng-switch-when="failure" class="icon icon-cross-circle"></i>                      
+           </span></p>
+          <p>
+            <em>Status last updated on: {{ shipment.sys_updated_on }}</em>
+          </p>
+      </div>
+         </div>
+        </div>
+
+
+      
+     <div id="events" class="container {{ shipment.show_events ? 'fade-in' : 'fade-out' }}" ng-show="shipment.show_events">
+<div class="row">
+  <div class="col-lg-5">
+                                     
+        <ul class="event-timeline" ng-repeat="e in shipment.tracking_events">
+          
+          <li>
+            <div>
+                
+           <p id="timestamp">{{e.u_timestamp}} </p>
+           <p>{{ e.u_status}}</p>
+            </div>                            
+
+          </li>
+        </ul>
+      
+       </div>
+           </div>
+
+

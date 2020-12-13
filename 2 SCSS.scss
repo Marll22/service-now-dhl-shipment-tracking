@@ -1,0 +1,159 @@
+label {
+ width: 45%; 
+}
+
+h3 {
+ display: inline-block; 
+}
+
+ul.event-timeline {
+    list-style-type: none;
+    position: relative;
+    padding-inline-start: 50px;
+}
+
+ul.event-timeline:before {
+    content: '';
+    background: #d4d9df;
+    display: inline-block;
+    position: absolute;
+    margin-bottom: 0!important;
+    left: 29px;
+    width: 2px;
+    height: 130%;
+    z-index: 400;
+}
+ul.event-timeline > li {
+    margin: 20px 0;
+    padding-left: 40px;
+}
+
+ul.event-timeline > li > span {
+ margin-left: 1rem; 
+}
+ul.event-timeline > li:before {
+    content: ' ';
+    background: white;
+    display: inline-block;
+    position: absolute;
+    top:40%;
+    border-radius: 50%;
+    border: 3px solid #22c0e8;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    z-index: 400;
+}
+
+li {
+  border: 0.5px solid #e6e6e6;
+  border-left: none;
+  border-radius: 3px;
+  padding: 6px;
+  width: 98%;
+}
+
+ul.event-timeline:first-child > li:before {
+background:#22c0e8;
+}
+
+.list-group-item:hover {
+  background-color: #f7f7f7;
+}
+
+.icon-check-circle {
+ color: green; 
+}
+
+.icon-arrow-right {
+ color: #22c0e8; 
+}
+
+.icon-cross-circle {
+ color: red; 
+}
+
+#tracking-heading {
+ margin-bottom: 10px; 
+}
+
+#refresh {
+ color: white;
+ margin-left: 6px;
+ padding: 4px;
+}
+
+#timestamp {
+ text-decoration: underline; 
+}
+
+.fade-in {
+animation: fadeIn ease 0.5s;
+-webkit-animation: fadeIn ease 0.5s;
+-moz-animation: fadeIn ease 0.5s;
+-o-animation: fadeIn ease 0.5s;
+-ms-animation: fadeIn ease 0.5s;
+}
+@keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1;}
+}
+
+.fade-out {
+animation: fadeOut ease 0.5s;
+-webkit-animation: fadeOut ease 0.5s;
+-moz-animation: fadeOut ease 00.55s;
+-o-animation: fadeOut ease 0.5s;
+-ms-animation: fadeOut ease 0.5s;
+}
+@keyframes fadeOut {
+0% {opacity:1;}
+100% {opacity:0;}
+}
+
+@-moz-keyframes fadeOut {
+0% {opacity:1;}
+100% {opacity:0;}
+}
+
+@-webkit-keyframes fadeOut {
+0% {opacity:1;}
+100% {opacity:0;}
+}
+
+@-o-keyframes fadeOut {
+0% {opacity:1;}
+100% {opacity:0;}
+}
+
+@-ms-keyframes fadeOut {
+0% {opacity:1;}
+100% {opacity:0;}
+}
+
+
+
+
+  
+  
+
